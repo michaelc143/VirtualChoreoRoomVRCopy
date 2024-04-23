@@ -15,7 +15,9 @@ public class hi : MonoBehaviour
             //Vector3 spawnPos = Camera.main.transform.position + Camera.main.transform.forward *2.0f;
             Vector3 spawnPos = studio.transform.position + studio.transform.forward *2.0f;
 
-            Instantiate(model, spawnPos, Quaternion.identity);
+            GameObject dup = Instantiate(model, spawnPos, Quaternion.identity);
+            dup.tag = "Duplicate";
+            Debug.Log("the tag of this dup is :" + dup.tag);
         }
     }
 }
