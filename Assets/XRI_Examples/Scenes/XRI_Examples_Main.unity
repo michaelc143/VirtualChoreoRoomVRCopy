@@ -4373,11 +4373,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7387125324240799344, guid: efebdf03cb1ccd043827e933755e413e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7387125324240799344, guid: efebdf03cb1ccd043827e933755e413e, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7387125324240799344, guid: efebdf03cb1ccd043827e933755e413e, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -4385,7 +4385,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7387125324240799344, guid: efebdf03cb1ccd043827e933755e413e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -30
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13527,6 +13527,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1086462529}
   - component: {fileID: 1086462530}
+  - component: {fileID: 1086462531}
   m_Layer: 31
   m_Name: test
   m_TagString: Untagged
@@ -13563,6 +13564,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: {fileID: 1569144357}
   studio: {fileID: 662961868}
+--- !u!114 &1086462531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086462528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22fb6a3a83b7542c59308ec197e31284, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMoving: 0
+  startPosition: {x: 0, y: 0, z: 0}
+  endPosition: {x: 0, y: 0, z: 0}
+  duration: 1
+  elapsedTime: 0
+  recordedPositions: []
 --- !u!1 &1092551000
 GameObject:
   m_ObjectHideFlags: 0
