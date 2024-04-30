@@ -14,10 +14,10 @@ public class SwitchCamera : MonoBehaviour
 
   public void ManageCamera() {
     if (Manager == 0) {
-        Cam2();
+        Cam1();
         Manager = 1;
     } else {
-        Cam1();
+        Cam2();
         Manager = 0;
     }
   }
