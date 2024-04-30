@@ -10,6 +10,8 @@ public class dancer_manager : MonoBehaviour
     public GameObject originalModel; //all dancers cloned from this model
     public GameObject[] dancerArray;
 
+    public int formationNum;
+
     public string folderPath = "dancer_csv_files"; // Path to the folder containing CSV files
 
     // Start is called before the first frame update
@@ -83,7 +85,25 @@ public class dancer_manager : MonoBehaviour
             i += 1;
 
         }
+
+        formationNum = 0;
         
+    }
+
+    public void nextFormation() {
+        Debug.Log("going to next");
+        foreach (GameObject dancer in dancerArray) {
+            dancer script = dancer.GetComponent<dancer>();
+            script.goToNext(formationNum + 1);
+        }
+    }
+
+    public void prevFormation() {
+        Debug.Log("going to prev");
+        foreach (GameObject dancer in dancerArray) {
+            dancer script = dancer.GetComponent<dancer>();
+            script.goToPrev(formationNum - 1);
+        }
     }
 
     // Update is called once per frame
