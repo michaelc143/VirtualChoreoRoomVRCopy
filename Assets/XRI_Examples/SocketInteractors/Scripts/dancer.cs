@@ -20,7 +20,7 @@ public class dancer : MonoBehaviour
         Debug.Log("new stage : " + stage);
 
         //make sure you don't exceed formation num
-        if (stage < dancerPositions.Count) {
+        if (stage <= dancerPositions.Count) {
 
             //get new and old positions
             Vector3 newPosition = new Vector3(dancerPositions[stage][0], dancerPositions[stage][1], dancerPositions[stage][2]);
@@ -47,7 +47,7 @@ public class dancer : MonoBehaviour
         Debug.Log("new stage : " + stage);
 
         //make sure you don't exceed formation num
-        if (stage > 0) {
+        if (stage >= 0) {
 
             //get new and old positions
             Vector3 newPosition = new Vector3(dancerPositions[stage][0], dancerPositions[stage][1], dancerPositions[stage][2]);

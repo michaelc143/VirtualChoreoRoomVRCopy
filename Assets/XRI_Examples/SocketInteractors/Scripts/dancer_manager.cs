@@ -10,7 +10,8 @@ public class dancer_manager : MonoBehaviour
     public GameObject originalModel; //all dancers cloned from this model
     public GameObject[] dancerArray;
 
-    public int formationNum;
+    public int formationNum; //current formation number we are on
+    public int totalNumFormations; //total number of formations
 
     public string folderPath = "dancer_csv_files"; // Path to the folder containing CSV files
 
@@ -48,6 +49,7 @@ public class dancer_manager : MonoBehaviour
             // each row is a formation postition
             // TODO: save these values into the dancer 
              List<float[]> dancerPositions = new List<float[]>();
+             totalNumFormations = data.Count;
             foreach (string[] row in data)
             {
                 float[] curPosition = new float[3];
@@ -92,18 +94,32 @@ public class dancer_manager : MonoBehaviour
 
     public void nextFormation() {
         Debug.Log("going to next");
-        foreach (GameObject dancer in dancerArray) {
-            dancer script = dancer.GetComponent<dancer>();
-            script.goToNext(formationNum + 1);
+        int stage = formationNum + 1;
+
+        if (stage <= totalNumFormations) {
+            foreach (GameObject dancer in dancerArray) {
+                dancer script = dancer.GetComponent<dancer>();
+                script.goToNext(stage);
+            }
+            formationNum = stage;
+
         }
+        
     }
 
     public void prevFormation() {
         Debug.Log("going to prev");
-        foreach (GameObject dancer in dancerArray) {
-            dancer script = dancer.GetComponent<dancer>();
-            script.goToPrev(formationNum - 1);
+        int stage = formationNum - 1;
+
+        if (stage >= 0) {
+            foreach (GameObject dancer in dancerArray) {
+                dancer script = dancer.GetComponent<dancer>();
+                script.goToPrev(stage);
+            }
+            formationNum = stage;
+
         }
+        
     }
 
     // Update is called once per frame
