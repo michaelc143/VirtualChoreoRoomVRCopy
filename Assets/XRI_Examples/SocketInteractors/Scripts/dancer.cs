@@ -27,19 +27,21 @@ public class dancer : MonoBehaviour
             Vector3 newPosition = new Vector3(dancerPositions[stage][0], dancerPositions[stage][1], dancerPositions[stage][2]);
             //Vector3 oldPosition = new Vector3(dancerPositions[stage-1][0], dancerPositions[stage-1][1], dancerPositions[stage-1][2]);
 
-
-            while (transform.position != newPosition) {
-                transform.position = Vector3.MoveTowards(transform.position, newPosition, speed * Time.deltaTime);
-
-            }
+            // Start coroutine to move towards new position
+            StartCoroutine(MoveToPosition(newPosition));
             
-
             formationNum = stage;
 
         }
       
+    }
 
-        
+    private IEnumerator MoveToPosition(Vector3 newPosition) {
+        float speed = 3f;
+        while (transform.position != newPosition) {
+            transform.position = Vector3.MoveTowards(transform.position, newPosition, speed * Time.deltaTime);
+            yield return null; // Wait for the next frame
+        }
     }
 
     public void goToPrev(int stage) {
@@ -53,18 +55,11 @@ public class dancer : MonoBehaviour
             Vector3 newPosition = new Vector3(dancerPositions[stage][0], dancerPositions[stage][1], dancerPositions[stage][2]);
             //Vector3 oldPosition = new Vector3(dancerPositions[stage-1][0], dancerPositions[stage-1][1], dancerPositions[stage-1][2]);
 
-
-            while (transform.position != newPosition) {
-                transform.position = Vector3.MoveTowards(transform.position, newPosition, speed * Time.deltaTime);
-
-            }
+            StartCoroutine(MoveToPosition(newPosition));
             
-
             formationNum = stage;
 
         }
-      
-
         
     }
 
