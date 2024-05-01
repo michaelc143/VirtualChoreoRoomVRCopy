@@ -793,7 +793,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 26481342}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: changeScene
+        m_MethodName: goToStudio
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -802,7 +802,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
+        m_CallState: 2
 --- !u!114 &490891254
 MonoBehaviour:
   m_ObjectHideFlags: 0

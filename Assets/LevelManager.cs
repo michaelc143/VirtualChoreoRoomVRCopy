@@ -18,8 +18,11 @@ public class LevelManager : MonoBehaviour
         
     }
 
-    public void changeScene() {
+    public void goToStudio() {
         SceneManager.LoadScene("XRI_Examples_Main");
-        Debug.Log("Button Clicked");
+    }
+
+    public void goToHome() {
+        SceneManager.LoadScene("MainMenu");
     }
 }
