@@ -96,7 +96,7 @@ public class dancer_manager : MonoBehaviour
         Debug.Log("going to next");
         int stage = formationNum + 1;
 
-        if (stage <= totalNumFormations) {
+        if (stage < totalNumFormations) {
             foreach (GameObject dancer in dancerArray) {
                 dancer script = dancer.GetComponent<dancer>();
                 script.goToNext(stage);

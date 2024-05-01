@@ -6,6 +6,7 @@ public class dancer : MonoBehaviour
 {
     public List<float[]> dancerPositions;
     public int formationNum;
+    public float speed = 5f;
 
     //sets the position and stage as manager instantiates
     public void setPositionData(List<float[]> positions)
@@ -20,13 +21,12 @@ public class dancer : MonoBehaviour
         Debug.Log("new stage : " + stage);
 
         //make sure you don't exceed formation num
-        if (stage <= dancerPositions.Count) {
+        if (stage < dancerPositions.Count) {
 
             //get new and old positions
             Vector3 newPosition = new Vector3(dancerPositions[stage][0], dancerPositions[stage][1], dancerPositions[stage][2]);
             //Vector3 oldPosition = new Vector3(dancerPositions[stage-1][0], dancerPositions[stage-1][1], dancerPositions[stage-1][2]);
 
-            float speed = 5f;
 
             while (transform.position != newPosition) {
                 transform.position = Vector3.MoveTowards(transform.position, newPosition, speed * Time.deltaTime);
@@ -53,7 +53,6 @@ public class dancer : MonoBehaviour
             Vector3 newPosition = new Vector3(dancerPositions[stage][0], dancerPositions[stage][1], dancerPositions[stage][2]);
             //Vector3 oldPosition = new Vector3(dancerPositions[stage-1][0], dancerPositions[stage-1][1], dancerPositions[stage-1][2]);
 
-            float speed = 5f;
 
             while (transform.position != newPosition) {
                 transform.position = Vector3.MoveTowards(transform.position, newPosition, speed * Time.deltaTime);
