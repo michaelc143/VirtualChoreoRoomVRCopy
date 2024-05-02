@@ -37,7 +37,7 @@ public class dancer : MonoBehaviour
     }
 
     private IEnumerator MoveToPosition(Vector3 newPosition) {
-        float speed = 3f;
+        float speed = 4f;
         while (transform.position != newPosition) {
             transform.position = Vector3.MoveTowards(transform.position, newPosition, speed * Time.deltaTime);
             yield return null; // Wait for the next frame
