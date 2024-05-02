@@ -13,13 +13,16 @@ public class dancer_manager : MonoBehaviour
     public int formationNum; //current formation number we are on
     public int totalNumFormations; //total number of formations
 
-    public string folderPath = Application.streamingAssetsPath; // Path to the folder containing CSV files
+    //private string folderPath = Path.Combine("Assets", "streamingAssets"); // Path to the folder containing CSV files
 
     // Start is called before the first frame update
     // will load in the dancers
     void Start()
     {
 
+        string folderPath = Path.Combine("Assets", "streamingAssets");
+        Debug.Log(folderPath);
+        
         // Get all CSV files in the folder
         string[] csvFiles = Directory.GetFiles(folderPath, "*.csv");
         dancerArray = new GameObject[csvFiles.Length];
@@ -28,6 +31,7 @@ public class dancer_manager : MonoBehaviour
         int i = 0;
         foreach (string filePath in csvFiles)
         {
+            //Debug.Log(filePath);
             // Read the file line by line
             StreamReader reader = new StreamReader(filePath);
             List<string[]> data = new List<string[]>();
