@@ -22,7 +22,8 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene("XRI_Examples_Main");
     }
 
-    public void goToHome() {
-        SceneManager.LoadScene("MainMenu");
-    }
+    // Implemented on MainMenuManager.cs
+    // public void goToHome() {
+    //     SceneManager.LoadScene("MainMenu");
+    // }
 }
