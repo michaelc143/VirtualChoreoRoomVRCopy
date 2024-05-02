@@ -13,7 +13,7 @@ public class dancer_manager : MonoBehaviour
     public int formationNum; //current formation number we are on
     public int totalNumFormations; //total number of formations
 
-    public string folderPath = "dancer_csv_files"; // Path to the folder containing CSV files
+    public string folderPath = Application.streamingAssetsPath; // Path to the folder containing CSV files
 
     // Start is called before the first frame update
     // will load in the dancers
